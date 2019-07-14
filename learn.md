@@ -4,3 +4,4 @@
 * 代码设置 GameObject.transform.localScale
 * 使用 Instantiate 实例化 GameObject
 * 注意 Canvas 的 Sorting Layer
+* delegate + Event 的应用
