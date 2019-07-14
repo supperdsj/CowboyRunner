@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDIed : MonoBehaviour {
+public class PlayerDied : MonoBehaviour {
     public delegate void EndGame();
 
     public static event EndGame endGame;
@@ -17,14 +17,13 @@ public class PlayerDIed : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "Collector") {
-            print("Die");
             PlayerDiedEndgame();
         }
     }
 
     void OnCollisionEnter2D(Collision2D target) {
-        if (target.gameObject.tag == "Zombie ") {
-            print("Die");
+
+        if (target.gameObject.tag == "Zombie") {
             PlayerDiedEndgame();
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerJump : MonoBehaviour {
     [SerializeField] AudioClip jumpClip;
     // [SerializeField]
-    float jumpForce = 7f, forwardForce = 0f;
+    float jumpForce = 12f, forwardForce = 0f;
     Rigidbody2D myBody;
     bool canJump;
     Button jumpButton;
@@ -23,18 +23,21 @@ public class PlayerJump : MonoBehaviour {
         if (Mathf.Abs(myBody.velocity.y) == 0) {
             canJump = true;
         }
-    }
-
-    public void Jump() {
-        if (canJump) {
-            canJump = false;
-            // AudioSource.PlayClipAtPoint(jumpClip,transform.position);
+        else {
             if (transform.position.x < 0) {
                 forwardForce = 1f;
             }
             else {
                 forwardForce = 0f;
             }
+            myBody.AddForce(new Vector2(forwardForce,0));
+        }
+    }
+
+    public void Jump() {
+        if (canJump) {
+            canJump = false;
+            // AudioSource.PlayClipAtPoint(jumpClip,transform.position);
             myBody.velocity=new Vector2(forwardForce,jumpForce);
         }
     }

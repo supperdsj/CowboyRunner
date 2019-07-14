@@ -3,3 +3,4 @@
 * 使用 Quad（3D Object）和设置图片的 Warp 属性来实现滚动对象
 * 代码设置 GameObject.transform.localScale
 * 使用 Instantiate 实例化 GameObject
+* 注意 Canvas 的 Sorting Layer

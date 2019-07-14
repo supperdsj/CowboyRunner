@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour {
-    float speed = -3f;
+    float speed = -4f;
     Rigidbody2D myBody;
 
     void Awake() {
